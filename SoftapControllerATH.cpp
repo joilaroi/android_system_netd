@@ -535,7 +535,7 @@ int SoftapController::stopDriver(char *iface) {
 			LOGE("failed to get interface name");
 			ret = -1;
 		}
-		if (buffer != 'w' && write(fd, "wlan0", 5) > 0) {
+		if (buffer != 'w' && write(fd, "eth0", 5) > 0) {
 			LOGD("interface renamed for STA mode");
 			usleep(500000); /* Give it a while after a name change... */
 			ret = 0;
@@ -651,7 +651,7 @@ int SoftapController::stopSoftap() {
             LOGE("failed to get interface name");
             ret = -1;
         }
-        if (buffer != 'w' && write(fd, "wlan0", 5) > 0) {
+        if (buffer != 'w' && write(fd, "eth0", 5) > 0) {
             LOGD("interface renamed for STA mode");
             usleep(500000); /* Give it a while after a name change... */
             ret = 0;

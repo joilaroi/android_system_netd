@@ -91,7 +91,7 @@ static int init_rfkill() {
         }
         sz = read(fd, &buf, sizeof(buf));
         close(fd);
-        if (sz >= 4 && memcmp(buf, "wlan", 4) == 0) {
+        if (sz >= 4 && memcmp(buf, "eth", 4) == 0) {
             rfkill_id = id;
             break;
         }
